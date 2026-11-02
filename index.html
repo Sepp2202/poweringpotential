@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Powering Potential</title>
+<meta name="description" content="Sepp Hock shares what he's learned about redox signalling, ASEA and living well at 61. No pressure, just a conversation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap">
+<style>
+/* Layout: from the shoreline inward. A tide-line hero, then sand-coloured reading sections broken by one deep-water band for the questions. */
+:root{
+  --bg:#F3F5F1;        /* morning sand-light */
+  --panel:#E6ECE7;     /* shallow water */
+  --ink:#11262C;       /* deep reef */
+  --muted:#4A5F63;     /* wet rock */
+  --sea:#1E6271;       /* Cairns sea, primary accent */
+  --sun:#B8722F;       /* sunrise, used once or twice */
+  --line:#C9D4CF;
+  --deep:#0F2A31;      /* question band */
+  --deep-ink:#E7F0EE;
+  --display:"Fraunces", Georgia, "Times New Roman", serif;
+  --body:"Atkinson Hyperlegible", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E1A1D;--panel:#152428;--ink:#E5EEEC;--muted:#A2B6B8;--sea:#7FC0CE;--sun:#E3A66A;--line:#25393D;--deep:#091316;--deep-ink:#E5EEEC;color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E1A1D;--panel:#152428;--ink:#E5EEEC;--muted:#A2B6B8;--sea:#7FC0CE;--sun:#E3A66A;--line:#25393D;--deep:#091316;--deep-ink:#E5EEEC;color-scheme:dark}
+
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:1.1rem;line-height:1.7}
+img{display:block;max-width:100%}
+a{color:var(--sea);text-underline-offset:3px}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--sun);outline-offset:3px;border-radius:4px}
+h1,h2,h3{font-family:var(--display);font-weight:600;line-height:1.12;text-wrap:balance;margin:0}
+p{margin:0}
+.wrap{max-width:1080px;margin:0 auto;padding-left:max(16px, env(safe-area-inset-left,0px));padding-right:max(16px, env(safe-area-inset-right,0px))}
+.eyebrow{font-size:.8rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--sea)}
+section{padding-block:clamp(56px,8vw,104px)}
+
+header .wrap{padding-block:20px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.brand{font-family:var(--display);font-size:1.2rem;font-weight:600;color:var(--ink);text-decoration:none}
+.brand span{color:var(--muted);font-weight:400}
+nav{display:flex;gap:20px;flex-wrap:wrap}
+nav a{color:var(--muted);text-decoration:none;font-size:.95rem}
+nav a:hover{color:var(--ink)}
+
+/* hero */
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(28px,5vw,64px);align-items:center;padding-block:clamp(16px,3vw,32px) clamp(48px,7vw,88px)}
+.hero .wrap > *{min-width:0}
+.hero h1{font-size:clamp(2.6rem,6.5vw,4.6rem)}
+.hero h1 em{font-style:normal;color:var(--sea)}
+.hero .lede{margin-top:22px;font-size:1.2rem;max-width:42ch}
+.hero .sub{margin-top:14px;color:var(--muted);max-width:46ch}
+.hero .ctas{margin-top:28px;display:flex;flex-wrap:wrap;gap:12px}
+.hero figure{margin:0}
+.hero img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 45%;border-radius:200px 200px 6px 6px}
+.hero figcaption{margin-top:10px;font-size:.85rem;color:var(--muted)}
+
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:999px;text-decoration:none;font-weight:700;font-size:1rem;border:0;cursor:pointer;font-family:inherit}
+.btn.solid{background:var(--sea);color:var(--bg)}
+.btn.solid:hover{filter:brightness(1.08)}
+.btn.line{border:1.5px solid var(--ink);color:var(--ink);background:transparent}
+
+/* basics */
+.basics .head{display:flex;flex-direction:column;gap:14px;max-width:60ch}
+.basics h2,.story h2,.next h2{font-size:clamp(2rem,4.4vw,3rem)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2.5vw,28px);margin-top:40px}
+.card{background:var(--panel);padding:26px 24px;border-radius:6px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.card .n{font-family:var(--display);font-size:1.6rem;color:var(--sun);line-height:1}
+.card h3{font-size:1.35rem}
+.card p{font-size:1rem;color:var(--muted)}
+.quote{margin-top:44px;font-family:var(--display);font-size:clamp(1.3rem,2.6vw,1.75rem);line-height:1.35;max-width:36ch;border-top:1px solid var(--line);padding-top:24px}
+
+/* story */
+.story .wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(28px,5vw,64px);align-items:center}
+.story .wrap > *{min-width:0}
+.story img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:6px}
+.story .txt{display:flex;flex-direction:column;gap:16px}
+.story .txt p{max-width:58ch}
+.story .salt{background:var(--panel);border-radius:6px;padding:20px 22px;font-size:1rem}
+.story .salt strong{font-family:var(--display);font-size:1.15rem;display:block;margin-bottom:4px}
+
+/* questions */
+.questions{background:var(--deep);color:var(--deep-ink)}
+.questions .eyebrow{color:var(--sun)}
+.questions h2{font-size:clamp(2rem,4.4vw,3rem);margin-top:12px}
+.questions .intro{margin-top:14px;max-width:56ch;opacity:.85}
+.faq{margin-top:36px;border-top:1px solid rgba(231,240,238,.18)}
+details{border-bottom:1px solid rgba(231,240,238,.18)}
+summary{list-style:none;cursor:pointer;padding:20px 40px 20px 0;font-family:var(--display);font-size:1.25rem;position:relative}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:4px;top:16px;font-size:1.6rem;color:var(--sun);transition:transform .2s}
+details[open] summary::after{transform:rotate(45deg)}
+details .a{padding:0 0 22px;max-width:62ch;opacity:.9;display:flex;flex-direction:column;gap:12px}
+details .a a{color:var(--sun)}
+
+/* next steps */
+.next .doors{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2.5vw,28px);margin-top:36px}
+.door{border:1px solid var(--line);border-radius:6px;padding:26px 24px;display:flex;flex-direction:column;gap:12px;min-width:0;background:var(--bg)}
+.door h3{font-size:1.4rem}
+.door p{color:var(--muted);font-size:1rem}
+.door .go{margin-top:auto;align-self:flex-start}
+.door.main{background:var(--panel);border-color:transparent}
+
+.contact{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;margin-top:8px}
+.contact code{font-family:var(--body);font-size:1rem;background:var(--panel);padding:4px 10px;border-radius:4px;user-select:all}
+.copy{font:inherit;font-size:.85rem;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--muted);cursor:pointer}
+
+footer{border-top:1px solid var(--line)}
+footer .wrap{padding-block:32px;display:flex;flex-direction:column;gap:12px}
+footer p{font-size:.85rem;color:var(--muted);max-width:90ch}
+footer .row{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+@media (max-width:860px){
+  .hero .wrap,.story .wrap{grid-template-columns:1fr}
+  .hero figure{order:-1;max-width:420px}
+  .cards,.next .doors{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+
+<header><div class="wrap">
+  <a class="brand" href="#top">Powering Potential <span>· Sepp Hock</span></a>
+  <nav aria-label="Sections">
+    <a href="#basics">The science</a>
+    <a href="#story">My story</a>
+    <a href="#questions">Questions</a>
+    <a href="#next">Next steps</a>
+  </nav>
+</div></header>
+
+<main id="top">
+<section class="hero" style="padding-block:0"><div class="wrap">
+  <div>
+    <p class="eyebrow">Redox signalling, explained simply</p>
+    <h1 style="margin-top:14px">Your body is having billions of <em>conversations</em> right now.</h1>
+    <p class="lede">I'm Sepp. I'm 61, a lifelong waterman and builder, and for 12 years I've been fascinated by how our cells talk to each other.</p>
+    <p class="sub">This page shares what I've learned, in plain English. There's no pressure here. Read, explore the research, and if you'd like to talk, I'm happy to.</p>
+    <div class="ctas">
+      <a class="btn solid" href="#basics">Show me the science</a>
+      <a class="btn line" href="#next">Talk with Sepp</a>
+    </div>
+  </div>
+  <figure>
+    <img src="img/waterfall.jpg" alt="Sepp standing waist-deep in a rainforest pool beneath a waterfall" width="882" height="1314">
+    <figcaption>Crystal Cascades, Far North Queensland</figcaption>
+  </figure>
+</div></section>
+
+<section id="basics" class="basics" style="background:var(--panel)"><div class="wrap">
+  <div class="head">
+    <p class="eyebrow">The basics</p>
+    <h2>Every cell is listening, and every cell is talking</h2>
+    <p>Think of your body as a huge orchestra. Trillions of cells need to play in time, and they do it by sending each other signals. Redox signalling is one of the ways they communicate. It's a normal part of biology, and scientists have studied it for decades.</p>
+  </div>
+  <div class="cards">
+    <div class="card" style="background:var(--bg)">
+      <span class="n">1</span>
+      <h3>The messengers</h3>
+      <p>Your cells make small, reactive molecules as part of everyday life. Researchers now understand that some of them act as messengers, not just as by-products.</p>
+    </div>
+    <div class="card" style="background:var(--bg)">
+      <span class="n">2</span>
+      <h3>The balance</h3>
+      <p>Healthy cells keep these signals in balance. Scientists call this redox balance, and it's an active field of research into how we age and adapt.</p>
+    </div>
+    <div class="card" style="background:var(--bg)">
+      <span class="n">3</span>
+      <h3>The whole picture</h3>
+      <p>Sleep, movement, morning light, good food, stress and connection all shape the environment your cells live in. No single thing is the answer.</p>
+    </div>
+  </div>
+  <p class="quote">Knowing the science means very little if we don't live it.</p>
+</div></section>
+
+<section id="story" class="story"><div class="wrap">
+  <figure style="margin:0"><img src="img/staff.jpg" alt="Sepp in a blue linen shirt holding a carved walking staff" width="872" height="1304" loading="lazy"></figure>
+  <div class="txt">
+    <p class="eyebrow">Why this matters to me</p>
+    <h2>Born in the mid-60s. Now thriving in my 60s.</h2>
+    <p>I've spent most of my life building homes and timber structures with my hands, and most of my mornings in the ocean. At 61, I'm still building. These days it's strength, health, relationships and community.</p>
+    <p>My mornings start the same way: Kundalini yoga, the sunrise, then the gym or the pool. I see wellbeing as many pieces of one picture, and learning about how the body works at the cellular level is one piece I've found fascinating for over a decade.</p>
+    <div class="salt">
+      <strong>It starts with salt water</strong>
+      The redox supplement I take each day begins as salt and purified water, transformed through a patented process developed by ASEA. For a bloke who's always been drawn to the sea, I love that.
+    </div>
+    <p>I've been with ASEA for 12 years, and every month I give to Advancing Life, its foundation supporting families and communities around the world.</p>
+  </div>
+</div></section>
+
+<section id="questions" class="questions"><div class="wrap">
+  <p class="eyebrow">The honest questions</p>
+  <h2>What people usually ask me</h2>
+  <p class="intro">Good questions deserve straight answers. If yours isn't here, ask me.</p>
+  <div class="faq">
+    <details>
+      <summary>Isn't this just another antioxidant?</summary>
+      <div class="a"><p>No. Antioxidants aim to neutralise reactive molecules. Redox signalling is about the balance and communication between them, which is a different idea. ASEA's own site explains how its products relate to this.</p></div>
+    </details>
+    <details>
+      <summary>What is ASEA?</summary>
+      <div class="a"><p>ASEA is a global company, based in Utah in the USA, that makes redox supplements and skincare. Its products are available in Australia and many other countries through independent brand partners like me.</p><p>For me, it's always been more than that. At an ASEA global event, these words went up on the big screen, and they say it better than I can:</p><blockquote style="margin:4px 0;padding:4px 0 4px 18px;border-left:2px solid var(--sun);font-family:var(--display);font-size:1.2rem;line-height:1.4">This is not a company. This is a global tribe united in purpose, ethos, science and service.</blockquote><p>That's what I've found over 12 years: people in many countries who care about doing life and business well, together.</p></div>
+    </details>
+    <details>
+      <summary>Is it a medicine? Will it fix my health problem?</summary>
+      <div class="a"><p>No. It's a supplement, not a medicine, and I'm not a doctor. If you have a health condition, please talk with your doctor or health professional. What I share here is my own experience and general education.</p></div>
+    </details>
+    <details>
+      <summary>Do I have to buy anything?</summary>
+      <div class="a"><p>Not at all. I'm happy to just have a conversation. If you'd like to try the products, you can explore and order directly on my ASEA page, in your own time.</p></div>
+    </details>
+    <details>
+      <summary>Is there a business opportunity?</summary>
+      <div class="a"><p>Yes, for those who want it. I've built an ASEA business over 12 years without ever pushing anyone, and I love mentoring people who want to make a difference. If that interests you, let's talk.</p></div>
+    </details>
+    <details>
+      <summary>Where can I read the research for myself?</summary>
+      <div class="a"><p>Redox signalling is one of the most studied areas of cell biology, with thousands of published papers. Two good places to start:</p><p><a href="https://redoxscience.com" target="_blank" rel="noopener">Redox Science</a> shares plain-language summaries of redox research.<br><a href="https://pubmed.ncbi.nlm.nih.gov/?term=redox+signaling" target="_blank" rel="noopener">PubMed</a>, the US National Library of Medicine's free database, lets you search the published studies yourself.</p><p>Most of this research looks at redox biology in general rather than at any one product. ASEA also works with scientific partners around the world, including researchers at the University of Southampton and the University of Bath in the UK, the University of California, Berkeley, the University of Valencia in Spain, the University of Chile, and here in Australia, Professor Gerald Münch at Western Sydney University.</p><p>If you'd like to know more about the research on ASEA's own products, ask me and I'll point you to the source.</p></div>
+    </details>
+  </div>
+</div></section>
+
+<section id="next" class="next"><div class="wrap">
+  <p class="eyebrow">Next steps</p>
+  <h2>Go at your own pace</h2>
+  <div class="doors">
+    <div class="door main">
+      <h3>Explore the products</h3>
+      <p>See ASEA's redox products and order directly on my ASEA page.</p>
+      <a class="btn solid go" href="https://aseaglobal.com/redoxsignaling" target="_blank" rel="noopener">Visit my ASEA page</a>
+    </div>
+    <div class="door">
+      <h3>Talk with Sepp</h3>
+      <p>A free, no-pressure chat about the science, the products or the business.</p>
+      <div class="contact">
+        <code id="email">sepphock@pm.me</code>
+        <button class="copy" type="button" id="copyEmail">Copy</button>
+      </div>
+      <a class="btn line go" href="mailto:sepphock@pm.me?subject=Hi%20Sepp">Email me</a>
+    </div>
+    <div class="door">
+      <h3>Meet the whole Sepp</h3>
+      <p>My story, my practices and what I'm building next.</p>
+      <a class="btn line go" href="https://sepphock.com">Visit sepphock.com</a>
+    </div>
+  </div>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+  <p>This page shares general education and personal experience only. It is not medical advice. ASEA products are not intended to diagnose, treat, cure or prevent any disease. Always talk with your doctor about your health. Individual experiences vary.</p>
+  <div class="row">
+    <p>© 2026 Sepp Hock · Independent ASEA Brand Partner · Cairns, Far North Queensland</p>
+    <p>ASEA is a trademark of ASEA LLC.</p>
+  </div>
+</div></footer>
+
+<script>
+(function(){
+  var b=document.getElementById('copyEmail'), t=document.getElementById('email');
+  if(!b) return;
+  b.addEventListener('click',function(){
+    var done=function(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy'},1800)};
+    var sel=function(){var r=document.createRange();r.selectNodeContents(t);var s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Selected, press copy'};
+    try{navigator.clipboard.writeText(t.textContent).then(done,sel)}catch(e){sel()}
+  });
+})();
+</script>
+
+</body>
+</html>
