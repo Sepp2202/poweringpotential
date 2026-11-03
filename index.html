@@ -3,261 +3,332 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Powering Potential</title>
-<meta name="description" content="Sepp Hock shares what he's learned about redox signalling, ASEA and living well at 61. No pressure, just a conversation.">
+<title>Sepp Hock | Cellular Intelligence &amp; Aging Strong</title>
+<meta name="description" content="Explore Sepp Hock's journey into cellular intelligence, redox signalling and what it means to Age Strong — with curiosity, connection and science at the heart of the conversation.">
+<meta property="og:title" content="Sepp Hock | Cellular Intelligence &amp; Aging Strong">
+<meta property="og:description" content="Curiosity. Connection. Cellular Intelligence. Aging Strong.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://poweringpotential.au/hero.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap">
-<style>
-/* Layout: from the shoreline inward. A tide-line hero, then sand-coloured reading sections broken by one deep-water band for the questions. */
-:root{
-  --bg:#F3F5F1;        /* morning sand-light */
-  --panel:#E6ECE7;     /* shallow water */
-  --ink:#11262C;       /* deep reef */
-  --muted:#4A5F63;     /* wet rock */
-  --sea:#1E6271;       /* Cairns sea, primary accent */
-  --sun:#B8722F;       /* sunrise, used once or twice */
-  --line:#C9D4CF;
-  --deep:#0F2A31;      /* question band */
-  --deep-ink:#E7F0EE;
-  --display:"Fraunces", Georgia, "Times New Roman", serif;
-  --body:"Atkinson Hyperlegible", system-ui, -apple-system, "Segoe UI", sans-serif;
-}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --bg:#0E1A1D;--panel:#152428;--ink:#E5EEEC;--muted:#A2B6B8;--sea:#7FC0CE;--sun:#E3A66A;--line:#25393D;--deep:#091316;--deep-ink:#E5EEEC;color-scheme:dark}}
-:root[data-theme="dark"]{
-  --bg:#0E1A1D;--panel:#152428;--ink:#E5EEEC;--muted:#A2B6B8;--sea:#7FC0CE;--sun:#E3A66A;--line:#25393D;--deep:#091316;--deep-ink:#E5EEEC;color-scheme:dark}
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap">
+<link rel="stylesheet" href="styles.css">
 
-*{box-sizing:border-box}
-html,body{margin:0}
-body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:1.1rem;line-height:1.7}
-img{display:block;max-width:100%}
-a{color:var(--sea);text-underline-offset:3px}
-a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--sun);outline-offset:3px;border-radius:4px}
-h1,h2,h3{font-family:var(--display);font-weight:600;line-height:1.12;text-wrap:balance;margin:0}
-p{margin:0}
-.wrap{max-width:1080px;margin:0 auto;padding-left:max(16px, env(safe-area-inset-left,0px));padding-right:max(16px, env(safe-area-inset-right,0px))}
-.eyebrow{font-size:.8rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--sea)}
-section{padding-block:clamp(56px,8vw,104px)}
-
-header .wrap{padding-block:20px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
-.brand{font-family:var(--display);font-size:1.2rem;font-weight:600;color:var(--ink);text-decoration:none}
-.brand span{color:var(--muted);font-weight:400}
-nav{display:flex;gap:20px;flex-wrap:wrap}
-nav a{color:var(--muted);text-decoration:none;font-size:.95rem}
-nav a:hover{color:var(--ink)}
-
-/* hero */
-.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(28px,5vw,64px);align-items:center;padding-block:clamp(16px,3vw,32px) clamp(48px,7vw,88px)}
-.hero .wrap > *{min-width:0}
-.hero h1{font-size:clamp(2.6rem,6.5vw,4.6rem)}
-.hero h1 em{font-style:normal;color:var(--sea)}
-.hero .lede{margin-top:22px;font-size:1.2rem;max-width:42ch}
-.hero .sub{margin-top:14px;color:var(--muted);max-width:46ch}
-.hero .ctas{margin-top:28px;display:flex;flex-wrap:wrap;gap:12px}
-.hero figure{margin:0}
-.hero img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 45%;border-radius:200px 200px 6px 6px}
-.hero figcaption{margin-top:10px;font-size:.85rem;color:var(--muted)}
-
-.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:999px;text-decoration:none;font-weight:700;font-size:1rem;border:0;cursor:pointer;font-family:inherit}
-.btn.solid{background:var(--sea);color:var(--bg)}
-.btn.solid:hover{filter:brightness(1.08)}
-.btn.line{border:1.5px solid var(--ink);color:var(--ink);background:transparent}
-
-/* basics */
-.basics .head{display:flex;flex-direction:column;gap:14px;max-width:60ch}
-.basics h2,.story h2,.next h2{font-size:clamp(2rem,4.4vw,3rem)}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2.5vw,28px);margin-top:40px}
-.card{background:var(--panel);padding:26px 24px;border-radius:6px;display:flex;flex-direction:column;gap:10px;min-width:0}
-.card .n{font-family:var(--display);font-size:1.6rem;color:var(--sun);line-height:1}
-.card h3{font-size:1.35rem}
-.card p{font-size:1rem;color:var(--muted)}
-.quote{margin-top:44px;font-family:var(--display);font-size:clamp(1.3rem,2.6vw,1.75rem);line-height:1.35;max-width:36ch;border-top:1px solid var(--line);padding-top:24px}
-
-/* story */
-.story .wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(28px,5vw,64px);align-items:center}
-.story .wrap > *{min-width:0}
-.story img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:6px}
-.story .txt{display:flex;flex-direction:column;gap:16px}
-.story .txt p{max-width:58ch}
-.story .salt{background:var(--panel);border-radius:6px;padding:20px 22px;font-size:1rem}
-.story .salt strong{font-family:var(--display);font-size:1.15rem;display:block;margin-bottom:4px}
-
-/* questions */
-.questions{background:var(--deep);color:var(--deep-ink)}
-.questions .eyebrow{color:var(--sun)}
-.questions h2{font-size:clamp(2rem,4.4vw,3rem);margin-top:12px}
-.questions .intro{margin-top:14px;max-width:56ch;opacity:.85}
-.faq{margin-top:36px;border-top:1px solid rgba(231,240,238,.18)}
-details{border-bottom:1px solid rgba(231,240,238,.18)}
-summary{list-style:none;cursor:pointer;padding:20px 40px 20px 0;font-family:var(--display);font-size:1.25rem;position:relative}
-summary::-webkit-details-marker{display:none}
-summary::after{content:"+";position:absolute;right:4px;top:16px;font-size:1.6rem;color:var(--sun);transition:transform .2s}
-details[open] summary::after{transform:rotate(45deg)}
-details .a{padding:0 0 22px;max-width:62ch;opacity:.9;display:flex;flex-direction:column;gap:12px}
-details .a a{color:var(--sun)}
-
-/* next steps */
-.next .doors{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2.5vw,28px);margin-top:36px}
-.door{border:1px solid var(--line);border-radius:6px;padding:26px 24px;display:flex;flex-direction:column;gap:12px;min-width:0;background:var(--bg)}
-.door h3{font-size:1.4rem}
-.door p{color:var(--muted);font-size:1rem}
-.door .go{margin-top:auto;align-self:flex-start}
-.door.main{background:var(--panel);border-color:transparent}
-
-.contact{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;margin-top:8px}
-.contact code{font-family:var(--body);font-size:1rem;background:var(--panel);padding:4px 10px;border-radius:4px;user-select:all}
-.copy{font:inherit;font-size:.85rem;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--muted);cursor:pointer}
-
-footer{border-top:1px solid var(--line)}
-footer .wrap{padding-block:32px;display:flex;flex-direction:column;gap:12px}
-footer p{font-size:.85rem;color:var(--muted);max-width:90ch}
-footer .row{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
-
-@media (max-width:860px){
-  .hero .wrap,.story .wrap{grid-template-columns:1fr}
-  .hero figure{order:-1;max-width:420px}
-  .cards,.next .doors{grid-template-columns:1fr}
-}
-</style>
 </head>
 <body>
-
-
 <header><div class="wrap">
-  <a class="brand" href="#top">Powering Potential <span>· Sepp Hock</span></a>
+  <a class="brand" href="#top">POWERING <span>POTENTIAL</span></a>
   <nav aria-label="Sections">
-    <a href="#basics">The science</a>
-    <a href="#story">My story</a>
-    <a href="#questions">Questions</a>
-    <a href="#next">Next steps</a>
+    <a href="#story">My Story</a><a href="#cellular">Cellular Intelligence</a><a href="#aging">Aging Strong</a><a href="#science">Science</a><a href="#connect">Connect</a>
   </nav>
 </div></header>
 
 <main id="top">
-<section class="hero" style="padding-block:0"><div class="wrap">
-  <div>
-    <p class="eyebrow">Redox signalling, explained simply</p>
-    <h1 style="margin-top:14px">Your body is having billions of <em>conversations</em> right now.</h1>
-    <p class="lede">I'm Sepp. I'm 61, a lifelong waterman and builder, and for 12 years I've been fascinated by how our cells talk to each other.</p>
-    <p class="sub">This page shares what I've learned, in plain English. There's no pressure here. Read, explore the research, and if you'd like to talk, I'm happy to.</p>
-    <div class="ctas">
-      <a class="btn solid" href="#basics">Show me the science</a>
-      <a class="btn line" href="#next">Talk with Sepp</a>
-    </div>
+<section class="hero">
+  <img src="hero.jpg" alt="Sepp Hock on the beach at sunrise" width="1125" height="1500" fetchpriority="high">
+  <div class="wrap"><div class="inner">
+    <p class="eyebrow">Cellular Intelligence · Aging Strong · Human Potential</p>
+    <h1>Your body is having billions of conversations right now.</h1>
+    <p>Every moment of every day, your cells are sensing, communicating, adapting and responding. Most of us were never taught about this extraordinary communication network. I certainly wasn't.</p>
+    <p>Then two words entered my life and changed the questions I was asking:</p>
+    <h2>Redox signalling.</h2>
+    <p>What began as curiosity became a journey into cellular communication, human potential and what it might really mean to <strong>Age Strong — from the cell up.</strong></p>
+    <a class="btn light" href="#story">Explore the Story</a>
+  </div></div>
+</section>
+
+<section class="invite"><div class="col flow">
+  <p class="eyebrow">An invitation</p>
+  <h2>Stay Curious.</h2>
+  <p>There's no pressure here. You don't need to believe my story or arrive at the same conclusions I have.</p>
+  <div class="pills"><span>Read.</span><span>Explore the research.</span><span>Ask questions.</span><span>Follow your curiosity.</span></div>
+  <p>That's exactly how my journey began.</p>
+</div></section>
+
+<section id="story" class="split sand">
+  <div class="pic"><img src="story.jpg" alt="Sepp Hock beside the ocean at sunrise" width="1500" height="1125" loading="lazy"></div>
+  <div class="txt flow">
+    <p class="eyebrow">My Story</p>
+    <h2>Curiosity Has Always Been the Thread</h2>
+    <p>I grew up as one of ten children in a loving family, with the beach and ocean as our backyard and a father who was a builder.</p>
+    <p>Even as a little boy, I was insatiably curious. I wanted to know how things worked. Why things happened. What was possible. I explored, questioned, pulled things apart, built things and looked at the world with a genuine sense of wonder.</p>
+    <blockquote>But some of my greatest teachers weren't people or books.<br><strong>They were the ocean, the land, the trees and the natural world around me.</strong></blockquote>
+    <p>From a young age, I paid attention to what happened naturally. I watched the ocean and its rhythms. I observed how nature adapted and regenerated. I noticed the relationships between things — how nothing in a healthy natural system seemed to exist entirely on its own.</p>
+    <p>And sometimes the greatest insights came when I stopped searching for an answer altogether.</p>
+    <p class="mantra">When I became still.<br>When I observed.<br>When I listened.</p>
+    <p>Whether I was beside the ocean, amongst trees, walking through a forest or simply sitting quietly on the land, nature had a way of bringing me back to myself. It still does.</p>
+    <p>I don't think that curious little boy ever really left me. That same curiosity followed me into building and design, adventure, health and wellbeing, and eventually into an entirely different landscape:</p>
+    <h3>The extraordinary intelligence of the human body.</h3>
+    <p>Looking back, however, I realise there was something even deeper beneath my curiosity.</p>
+    <h3>It was a feeling.</h3>
+    <p>There was something I experienced when I became still in nature — beside the ocean, amongst the trees, with my feet on the earth — that I struggled to put into words as a young boy. I simply knew it felt like <strong>connection</strong>.</p>
+    <p>And often, when I stopped searching so hard and became quiet enough to listen, insights and answers seemed to arrive. That feeling has stayed with me my entire life.</p>
+    <p>Today, I understand it as connection with something greater than myself — with nature, with my own soul and Spirit, and ultimately, for me, with <strong>God</strong>.</p>
+    <p>And at the heart of that connection is a feeling I can describe very simply:</p>
+    <h3>Love.</h3>
+    <p>Perhaps that's why I've remained so curious. I've never been satisfied simply knowing <strong>what</strong> something is. I've always wanted to understand what sits beneath it — what connects it, what gives it life and how it relates to everything around it.</p>
+    <p>I want to observe. I want to listen. I want to feel. And I want to keep asking better questions.</p>
+    <blockquote>For me, science and spirituality don't need to compete.<br><strong>One helps me understand.<br>The other helps me feel.</strong></blockquote>
+    <p>And sometimes they seem to lead me towards the very same question:</p>
+    <h3>What connects us?</h3>
+    <p>At 61, I'm no less curious than that little boy growing up beside the ocean. <strong>If anything, I'm more curious than ever.</strong></p>
   </div>
+</section>
+
+<section><div class="col flow">
+  <p class="eyebrow">When the Questions Became Personal</p>
+  <h2>When curiosity moved from the world around me to the body within me.</h2>
+  <p>Around the age of 40, something happened that turned my lifelong curiosity in a very different direction.</p>
+  <p>I was surfing when I went head-first into a sandbar and seriously injured my neck.</p>
+  <p>The ocean had always been one of the places where I felt most alive, most connected and most at home. Suddenly, it was also the place where my relationship with my own body changed.</p>
+  <div class="qs"><p>How does the human body actually heal?</p><p>How does it know what to repair?</p><p>How do cells know what is happening somewhere else in the body?</p><p>What tells the body when something is out of balance?</p></div>
+  <p>At the time, I didn't have language such as <em>cellular communication</em> or <em>redox signalling</em>. I simply had questions. And I had a body that wasn't responding in the way I hoped it would.</p>
+  <p>For close to ten years, I explored natural approaches to supporting my body. I received treatments virtually every week and worked with people who genuinely wanted to help me.</p>
+  <p>I kept looking. I kept asking. I kept listening to my body. But despite all that effort, the underlying problem remained part of my everyday life.</p>
+  <blockquote>When something doesn't make sense to me, I don't stop being curious. <strong>I become more curious.</strong></blockquote>
+  <p>Then, on <strong>11 September 2014</strong>, another conversation entered my life. I was introduced to ASEA — and to two words I had never heard before:</p>
+  <h3>Redox signalling.</h3>
+  <p>I had no idea what they meant. But something about the concept immediately caught my attention.</p>
+  <p>Here was a conversation about the human body that wasn't beginning with symptoms. It was beginning with <strong>cells</strong>. With communication. With signalling. With the body's extraordinarily complex systems for sensing its environment and responding to change.</p>
+  <blockquote>What if there was an entire level of communication happening inside the human body that I'd simply never known existed?</blockquote>
+  <p>That question sent me down another rabbit hole. I started reading. I started listening. I started asking questions. And just as I had done since I was that curious little boy beside the ocean, I began observing what happened for myself.</p>
+</div></section>
+
+<section class="pause" aria-label="Crystal Cascades">
   <figure>
-    <img src="waterfall.jpg" alt="Sepp standing waist-deep in a rainforest pool beneath a waterfall" width="882" height="1314">
+    <img src="waterfall.jpg" alt="Sepp standing waist-deep in a rainforest pool beneath a waterfall" width="882" height="1314" loading="lazy">
     <figcaption>Crystal Cascades, Far North Queensland</figcaption>
   </figure>
+</section>
+
+<section id="cellular" class="deep"><div class="col flow">
+  <p class="eyebrow">Cellular Intelligence</p>
+  <h2>Your body already knows what to do.</h2>
+  <p>Every moment of every day, trillions of cells are sensing, communicating, adapting and responding to what is happening around them.</p>
+  <p>They aren't working independently. They are part of an extraordinary biological communication network — constantly exchanging signals that help the body coordinate normal function, maintain balance and respond to change.</p>
+  <p>This is what I think of as:</p>
+  <h3>Cellular Intelligence.</h3>
+  <p>And underneath much of this communication is something most of us were never taught about: <strong>redox signalling.</strong></p>
+  <p>Redox signalling is one of the fundamental ways cells communicate and respond to their environment. These signalling processes help cells sense what is happening, communicate and coordinate biological responses.</p>
+  <blockquote>This isn't something we're adding to the human body.<br><strong>It's something the body already does.</strong></blockquote>
+  <p>The deeper I went into this science, the more my perspective changed. Instead of asking only, <strong>“What can we put into the body?”</strong> I became fascinated by another question:</p>
+  <h3>“How well are our cells communicating?”</h3>
+  <p>That question opened an entirely different conversation for me — about health, performance, recovery, ageing and what it might really mean to <strong>Age Strong — from the cell up.</strong></p>
 </div></section>
 
-<section id="basics" class="basics" style="background:var(--panel)"><div class="wrap">
-  <div class="head">
-    <p class="eyebrow">The basics</p>
-    <h2>Every cell is listening, and every cell is talking</h2>
-    <p>Think of your body as a huge orchestra. Trillions of cells need to play in time, and they do it by sending each other signals. Redox signalling is one of the ways they communicate. It's a normal part of biology, and scientists have studied it for decades.</p>
+<section class="mist"><div class="col flow">
+  <p class="eyebrow">From Ingredients to Information</p>
+  <h2>What if the next frontier isn't only what we put into the body — but how the body communicates?</h2>
+  <p>For generations, much of the conversation around nutrition and wellbeing has focused on <strong>ingredients</strong>: vitamins, minerals, proteins, essential fats, antioxidants and plant compounds.</p>
+  <p>And those things matter. Our bodies need the right raw materials. But there's another part of the story that fascinates me even more.</p>
+  <h3>Information.</h3>
+  <p>Every second, our cells are receiving information, responding to their environment and coordinating an extraordinary number of biological processes. One of the ways this happens is through <strong>redox signalling</strong>.</p>
+  <p>For many years, reactive oxygen species were talked about primarily as damaging by-products of metabolism — something we needed to neutralise. We now understand that the story is considerably more interesting.</p>
+  <p>At controlled physiological levels, certain reactive molecules can also act as <strong>signals</strong>. One important example is hydrogen peroxide. At appropriate levels and in the right place and time, hydrogen peroxide can act as a cellular messenger, influencing signalling pathways involved in how cells adapt and respond to changing conditions.</p>
+  <p>At excessive levels, however, reactive molecules can contribute to oxidative stress and cellular damage.</p>
+  <div class="contrast"><span>Not simply:</span><strong>Oxidants are bad.<br>Antioxidants are good.</strong><span>It's about:</span><strong>Balance. Location. Timing. Communication.</strong></div>
+  <p>The body has evolved sophisticated systems to manage that balance, including its own antioxidant defence networks. Among them are enzymes such as <strong>superoxide dismutase — SOD — and glutathione peroxidase — GPx</strong>, together with systems involving glutathione, thioredoxin and other molecules that participate in maintaining redox balance.</p>
+  <blockquote><strong>Ingredients provide the building materials.</strong><br>Signals help coordinate what happens within the system.</blockquote>
+  <p>And once I began looking at the human body through the lens of communication rather than ingredients alone, another question became impossible for me to ignore:</p>
+  <h3>What happens to these systems as we age?</h3>
+</div></section>
+
+<section class="split reverse">
+  <div class="pic"><img src="ocean.jpg" alt="Sepp at sunrise on the beach" width="1500" height="1125" loading="lazy"></div>
+  <div class="txt flow">
+    <p class="eyebrow">Then Something Changed</p>
+    <p>When I was introduced to ASEA on 11 September 2014, I didn't experience some dramatic overnight transformation. Quite the opposite.</p>
+    <p>For months, I simply continued. I was curious about the technology and about redox signalling, so I incorporated it into my daily routine and paid attention to what I noticed.</p>
+    <h3>For the first six months or so, I honestly didn't notice very much at all.</h3>
+    <p>And then came a morning I can still remember vividly.</p>
+    <p class="date">1 May 2015.</p>
+    <p>I woke up and realised I could turn my head to the right without experiencing the response that had restricted me for almost ten years.</p>
+    <blockquote>“Has the Earth just wobbled? Are the moon and stars in a different alignment? What on earth just happened?”</blockquote>
+    <p>Because suddenly I could do something I hadn't been able to do comfortably for years. It was extraordinary to me.</p>
+    <p>I didn't have a laboratory measuring what had happened inside my body, and my personal experience can't establish what caused that change or predict what another person might experience.</p>
+    <h3>But I knew what I had experienced.</h3>
+    <p>And more importantly, it made me even more curious. I wanted to understand the biology. I wanted to understand redox signalling. I wanted to understand what scientists were discovering about cellular communication and the body's own systems of response, repair and balance.</p>
+    <p>What began for me as curiosity had become something much more personal. And that was the beginning of a journey that has now continued for more than twelve years.</p>
+    <p class="mantra">I'm still asking questions.<br>I'm still learning.<br>And I'm still curious.</p>
   </div>
+</section>
+
+<section class="deep"><div class="col flow">
+  <p class="eyebrow">You've Got My Attention</p>
+  <h2>Not long after that chapter of my life, I found myself facing something far more confronting.</h2>
+  <h3>Cancer.</h3>
+  <p>But there is something important to understand about the way I've approached the major turning points in my life.</p>
+  <p>Whether the challenge has been physical, emotional, financial or spiritual, I've learned to change the question.</p>
+  <p>Rather than becoming consumed by <strong>“Why is this happening to me?”</strong> I've learned to become still enough to say:</p>
+  <blockquote>“You've got my attention. I'm listening.”</blockquote>
+  <div class="qs"><p>What is this experience here to show me?</p><p>What am I being invited to understand?</p><p>What is asking to be remembered?</p><p>Who am I being invited to become?</p></div>
+  <p>I've come to believe that some of life's greatest challenges can also become invitations. Not because the experience itself is necessarily good. Not because pain or loss should be romanticised. But because once I'm standing in the middle of something I cannot change, I still have a choice about <strong>how I meet it</strong>.</p>
+  <p>I've experienced that throughout my life. Physical injuries. Personal challenges. Times of uncertainty. Moments when the path ahead wasn't clear.</p>
+  <p>Again and again, life seemed to be asking me to stop. To listen. To go deeper. And ultimately, to discover something within myself that perhaps I hadn't yet fully expressed or remembered.</p>
+  <p>So when cancer entered my life, the question eventually became bigger than cancer.</p>
+  <h3>“What is life asking of me now?”</h3>
+  <p>I was given medical advice and treatment options. I listened, asked questions, researched extensively and ultimately made deeply personal decisions about my own path.</p>
+  <p>Those decisions were mine. They are not medical advice, and I would never suggest that someone facing a serious diagnosis should simply make the choices I made.</p>
+  <p>But underneath all the information, all the opinions and all the uncertainty, I returned to something that had guided me since childhood.</p>
+  <h3>Stillness.</h3>
+  <p>I listened to the people around me. I listened to the information available to me. I listened to my body. And I listened deeply to that quiet place within myself — the place I have always associated with soul, Spirit and God.</p>
+  <p>And once again, underneath everything, I found <strong>Connection.</strong> Connection to myself. Connection to the people I loved. Connection to nature. Connection to God.</p>
+  <h3>And beneath all of it: Love.</h3>
+  <p>My health journey continued alongside medical monitoring, and over time I received news I will never take for granted:</p>
+  <h3>There was no longer evidence of active disease.</h3>
+  <p>I don't offer my experience as proof of what caused that outcome, nor can one person's experience predict what will happen in another person's body.</p>
+  <p>What I can speak about is what the experience changed <strong>within me</strong>.</p>
+  <blockquote>Every experience can become an invitation to know myself more deeply.</blockquote>
+  <p>To remember more of who I am. To become a higher and better expression of myself. And then — importantly — <strong>to do something with what I've learned.</strong></p>
+  <p>Because for me, wisdom isn't meant simply to be accumulated.</p>
+  <p class="mantra">It's meant to be lived.<br>It's meant to be shared.<br>And ultimately, it's meant to become service.</p>
+  <p>I didn't come through that experience simply wanting more years.</p>
+  <h2>I wanted more life in my years.</h2>
+  <p class="mantra">More presence.<br>More strength.<br>More curiosity.<br>More connection.<br>More contribution.<br>More service.<br>More love.</p>
+  <p>And perhaps that is where <strong>Aging Strong</strong> truly began for me.</p>
+</div></section>
+
+<section id="aging" class="split sand">
+  <div class="pic"><img src="sepp.jpg" alt="Sepp Hock smiling on the beach at sunrise" width="1125" height="1500" loading="lazy"></div>
+  <div class="txt flow">
+    <p class="eyebrow">Aging Strong</p>
+    <h2>At 61, I don't have any desire to turn back the clock.</h2>
+    <h3>I want to live fully in the age I am.</h3>
+    <p>For me, Aging Strong isn't about looking younger or pretending that ageing isn't happening. It's about asking a different question:</p>
+    <h3>Who am I becoming as I grow older?</h3>
+    <div class="qs"><p>How capable can I remain?</p><p>How well can I move?</p><p>How deeply can I connect?</p><p>How curious can I remain?</p><p>How much can I continue to learn, create, contribute and serve?</p></div>
+    <p>And how well can I support this extraordinary body that has carried me through every experience of my life?</p>
+    <p>Today, movement is part of my life. I swim. I strength train. I practise Kundalini yoga. I spend time in the ocean. I embrace heat, cold, breath, stillness and movement.</p>
+    <p>But Aging Strong is about far more than physical strength.</p>
+    <p class="mantra">It's physical.<br>It's emotional.<br>It's mental.<br>It's spiritual.</p>
+    <p>It's maintaining the capacity to participate fully in life. To get down on the ground and get back up. To explore. To create. To love deeply. To remain useful. To contribute. To serve.</p>
+    <p>And perhaps most importantly:</p>
+    <h3>To remain curious.</h3>
+    <p>I'm fascinated by what becomes possible when we stop thinking about ageing simply as decline and begin asking how we can support our bodies, minds, relationships and sense of purpose throughout the years ahead.</p>
+    <p>I don't know how many years I have. None of us do. But I know how I want to meet them.</p>
+    <p class="mantra">Present.<br>Strong.<br>Curious.<br>Connected.<br>Contributing.<br>And fully alive.</p>
+    <h3>That's what Aging Strong means to me.</h3>
+  </div>
+</section>
+
+<section class="mist"><div class="col flow">
+  <p class="eyebrow">The Changing Conversation</p>
+  <h2>What happens as we age?</h2>
+  <p>This is where the science became particularly relevant to me. Because ageing isn't simply about the number of candles on a birthday cake. Changes are taking place throughout the body — right down at the cellular level.</p>
+  <p>Our cells are constantly exposed to challenges from normal metabolism, our environment and everyday life. The body has sophisticated systems for sensing those challenges, responding to them and restoring balance. <strong>Redox signalling is part of that story.</strong></p>
+  <p>As we grow older, aspects of our redox regulation and cellular stress-response systems can change. The relationship between reactive molecules, antioxidant defence systems and cellular signalling can become less resilient.</p>
+  <p>And this is where the old idea that <strong>“Free radicals are bad and antioxidants are good”</strong> becomes far too simplistic.</p>
+  <p>Some reactive molecules are capable of causing damage when they become excessive or poorly controlled. But some of those very same molecules also act as essential <strong>cellular signals</strong>.</p>
+  <h3>The body doesn't simply need to eliminate them. It needs to regulate them.</h3>
+  <p>That distinction fascinated me. Because once again, the story wasn't simply about adding another ingredient. It was about the body's ability to:</p>
+  <p class="mantra">Communicate. Regulate. Adapt. Respond.</p>
+  <p>Our own defence systems are part of this process. Enzymes such as <strong>SOD and GPx</strong>, together with glutathione and other redox systems, help maintain the biological balance necessary for normal cellular function.</p>
+  <p>Research into ageing increasingly shows us that maintaining redox homeostasis isn't a static process.</p>
+  <h3>It's dynamic.</h3>
+  <p>It's an ongoing conversation inside the body.</p>
+  <blockquote>How do we support our bodies to remain capable, adaptable and resilient as we grow older?</blockquote>
+  <p>For me, that's a much more interesting conversation than simply attempting to look younger.</p>
+  <h3>It's the science underneath Aging Strong.</h3>
+</div></section>
+
+<section><div class="col flow">
+  <p class="eyebrow">Where ASEA Entered My Story</p>
+  <h2>The technology that introduced me to redox signalling</h2>
+  <p>By now you can probably understand why those two words I first heard in 2014 captured my attention: <strong>Redox signalling.</strong></p>
+  <p>I hadn't gone looking for a company. I hadn't gone looking for another wellness trend.</p>
+  <h3>I had gone looking for answers.</h3>
+  <p>And ASEA happened to be the doorway through which I first discovered this extraordinary area of biology.</p>
+  <div class="qs"><p>What exactly are redox signalling molecules?</p><p>What role do they play naturally within the human body?</p><p>How do cells use these signals?</p><p>What does the broader scientific literature say?</p><p>What evidence exists specifically for this technology?</p></div>
+  <p>Those questions matter to me. Because there's an important difference between understanding the established science of <strong>redox biology</strong> and understanding research conducted on a particular <strong>redox technology or product</strong>.</p>
+  <p>I don't believe those two things should ever be blurred together.</p>
+  <h3>So I kept following the science.</h3>
+  <p>Over the years, research associated with this technology has involved scientists, laboratories and academic institutions in different parts of the world. I've continued following that work because I'm interested in evidence — not simply claims.</p>
+  <p>And today, anyone who wants to explore further can do exactly what I did:</p>
+  <p class="mantra">Read.<br>Question.<br>Investigate.<br>Follow the references.<br>Stay curious.</p>
+  <p>I don't need you to believe my story.</p>
+  <h3>My experience is mine.</h3>
+  <p>What I invite you to do is explore the information for yourself, ask your own questions and decide what deserves your curiosity. That's exactly how my journey began.</p>
+</div></section>
+
+<section id="science" class="deep"><div class="wrap">
+  <div class="flow" style="max-width:760px">
+    <p class="eyebrow">Explore the Science</p>
+    <h2>Don't Take My Word for It. Explore.</h2>
+    <p style="font-size:1.25rem">Curiosity has shaped my entire life. So I'm not asking you to simply accept what I say about redox signalling, cellular communication or this technology. Explore it for yourself.</p>
+    <p>Follow the research. Read the papers. Ask questions. Look beneath the headlines and form your own understanding.</p>
+  </div>
+  <!-- SCIENCE CARDS: to change where a button goes, edit its href="..." only. -->
   <div class="cards">
-    <div class="card" style="background:var(--bg)">
-      <span class="n">1</span>
-      <h3>The messengers</h3>
-      <p>Your cells make small, reactive molecules as part of everyday life. Researchers now understand that some of them act as messengers, not just as by-products.</p>
-    </div>
-    <div class="card" style="background:var(--bg)">
-      <span class="n">2</span>
-      <h3>The balance</h3>
-      <p>Healthy cells keep these signals in balance. Scientists call this redox balance, and it's an active field of research into how we age and adapt.</p>
-    </div>
-    <div class="card" style="background:var(--bg)">
-      <span class="n">3</span>
-      <h3>The whole picture</h3>
-      <p>Sleep, movement, morning light, good food, stress and connection all shape the environment your cells live in. No single thing is the answer.</p>
-    </div>
+    <article class="card">
+      <span class="n">01</span>
+      <h3>Understand Redox Signalling</h3>
+      <p>Discover the fascinating biology of how cells use redox processes as part of their communication, regulation and response systems.</p>
+      <a class="btn" href="research.html#biology">Explore Redox Biology</a>
+    </article>
+    <article class="card">
+      <span class="n">02</span>
+      <h3>Follow the Research</h3>
+      <p>Go deeper into published scientific literature and research connected with redox science and the technology that first introduced me to this field.</p>
+      <a class="btn" href="research.html#research">Explore the Research</a>
+    </article>
+    <article class="card">
+      <span class="n">03</span>
+      <h3>Discover the Technology</h3>
+      <p>Learn more about the redox technology I first encountered in 2014, the products developed from it and the research that continues around this field.</p>
+      <a class="btn" href="https://aseaglobal.com/redoxsignaling" target="_blank" rel="noopener">Visit my ASEA page</a>
+    </article>
   </div>
-  <p class="quote">Knowing the science means very little if we don't live it.</p>
-</div></section>
-
-<section id="story" class="story"><div class="wrap">
-  <figure style="margin:0"><img src="staff.jpg" alt="Sepp in a blue linen shirt holding a carved walking staff" width="872" height="1304" loading="lazy"></figure>
-  <div class="txt">
-    <p class="eyebrow">Why this matters to me</p>
-    <h2>Born in the mid-60s. Now thriving in my 60s.</h2>
-    <p>I've spent most of my life building homes and timber structures with my hands, and most of my mornings in the ocean. At 61, I'm still building. These days it's strength, health, relationships and community.</p>
-    <p>My mornings start the same way: Kundalini yoga, the sunrise, then the gym or the pool. I see wellbeing as many pieces of one picture, and learning about how the body works at the cellular level is one piece I've found fascinating for over a decade.</p>
-    <div class="salt">
-      <strong>It starts with salt water</strong>
-      The redox supplement I take each day begins as salt and purified water, transformed through a patented process developed by ASEA. For a bloke who's always been drawn to the sea, I love that.
-    </div>
-    <p>I've been with ASEA for 12 years, and every month I give to Advancing Life, its foundation supporting families and communities around the world.</p>
+  <div class="centre flow" style="margin-top:3rem;align-items:center">
+    <p class="mantra">Stay curious.<br>Ask better questions.<br>Follow the evidence.<br>Listen to your own experience.</p>
+    <p>That's what I've been doing for more than a decade.</p>
   </div>
 </div></section>
 
-<section id="questions" class="questions"><div class="wrap">
-  <p class="eyebrow">The honest questions</p>
-  <h2>What people usually ask me</h2>
-  <p class="intro">Good questions deserve straight answers. If yours isn't here, ask me.</p>
-  <div class="faq">
-    <details>
-      <summary>Isn't this just another antioxidant?</summary>
-      <div class="a"><p>No. Antioxidants aim to neutralise reactive molecules. Redox signalling is about the balance and communication between them, which is a different idea. ASEA's own site explains how its products relate to this.</p></div>
-    </details>
-    <details>
-      <summary>What is ASEA?</summary>
-      <div class="a"><p>ASEA is a global company, based in Utah in the USA, that makes redox supplements and skincare. Its products are available in Australia and many other countries through independent brand partners like me.</p><p>For me, it's always been more than that. At an ASEA global event, these words went up on the big screen, and they say it better than I can:</p><blockquote style="margin:4px 0;padding:4px 0 4px 18px;border-left:2px solid var(--sun);font-family:var(--display);font-size:1.2rem;line-height:1.4">This is not a company. This is a global tribe united in purpose, ethos, science and service.</blockquote><p>That's what I've found over 12 years: people in many countries who care about doing life and business well, together.</p></div>
-    </details>
-    <details>
-      <summary>Is it a medicine? Will it fix my health problem?</summary>
-      <div class="a"><p>No. It's a supplement, not a medicine, and I'm not a doctor. If you have a health condition, please talk with your doctor or health professional. What I share here is my own experience and general education.</p></div>
-    </details>
-    <details>
-      <summary>Do I have to buy anything?</summary>
-      <div class="a"><p>Not at all. I'm happy to just have a conversation. If you'd like to try the products, you can explore and order directly on my ASEA page, in your own time.</p></div>
-    </details>
-    <details>
-      <summary>Is there a business opportunity?</summary>
-      <div class="a"><p>Yes, for those who want it. I've built an ASEA business over 12 years without ever pushing anyone, and I love mentoring people who want to make a difference. If that interests you, let's talk.</p></div>
-    </details>
-    <details>
-      <summary>Where can I read the research for myself?</summary>
-      <div class="a"><p>Redox signalling is one of the most studied areas of cell biology, with thousands of published papers. Two good places to start:</p><p><a href="https://redoxscience.com" target="_blank" rel="noopener">Redox Science</a> shares plain-language summaries of redox research.<br><a href="https://pubmed.ncbi.nlm.nih.gov/?term=redox+signaling" target="_blank" rel="noopener">PubMed</a>, the US National Library of Medicine's free database, lets you search the published studies yourself.</p><p>Most of this research looks at redox biology in general rather than at any one product. ASEA also works with scientific partners around the world, including researchers at the University of Southampton and the University of Bath in the UK, the University of California, Berkeley, the University of Valencia in Spain, the University of Chile, and here in Australia, Professor Gerald Münch at Western Sydney University.</p><p>If you'd like to know more about the research on ASEA's own products, ask me and I'll point you to the source.</p></div>
-    </details>
-  </div>
-</div></section>
+<section id="connect"><div class="col flow">
+  <p class="eyebrow">Connection</p>
+  <h2>Still Curious? So Am I.</h2>
+  <p>If you've made it this far, perhaps something here has sparked a question. That's where every meaningful chapter of my own journey has begun.</p>
+  <h3>With curiosity.</h3>
+  <p>You don't need to have all the answers. Neither do I.</p>
+  <p>I'm still learning, still exploring and still fascinated by the extraordinary intelligence of the human body — and by what becomes possible when we become more conscious of how we live, move, connect and care for ourselves as we grow older.</p>
+  <p>For me, this journey has never been simply about a product.</p>
+  <h3>It's about something much bigger.</h3>
+  <div class="qs"><p>How do we live well?</p><p>How do we remain capable?</p><p>How do we stay connected?</p><p>How do we continue growing?</p><p>And how do we use what we learn to contribute and serve others?</p></div>
+  <p>Those are questions I expect I'll be exploring for the rest of my life.</p>
+  <p>So if something you've read here has awakened your curiosity, I'd love to hear from you. Not to convince you of anything.</p>
+  <h3>Simply to have a conversation.</h3>
+  <p>Tell me what brought you here. Tell me what you're curious about. Ask me the questions that matter to you.</p>
+  <p>And if I can share something from my experience, point you towards research or simply help you explore another perspective, I'm happy to do that.</p>
+  <blockquote>Curiosity opens the door.<br>Connection changes the conversation.<br><strong>And what we do with what we discover can become contribution and service.</strong></blockquote>
 
-<section id="next" class="next"><div class="wrap">
-  <p class="eyebrow">Next steps</p>
-  <h2>Go at your own pace</h2>
-  <div class="doors">
-    <div class="door main">
-      <h3>Explore the products</h3>
-      <p>See ASEA's redox products and order directly on my ASEA page.</p>
-      <a class="btn solid go" href="https://aseaglobal.com/redoxsignaling" target="_blank" rel="noopener">Visit my ASEA page</a>
+  <div class="contact">
+    <h3>Start the conversation</h3>
+    <p>Email me directly, or say hello on Facebook or Instagram.</p>
+    <div class="email"><code id="email">sepphock@pm.me</code><button class="copy" type="button" id="copyEmail">Copy</button></div>
+    <div class="btns">
+      <a class="btn solid" href="mailto:sepphock@pm.me?subject=Hi%20Sepp%2C%20I%27m%20curious">Email Sepp</a>
+      <a class="btn line" href="https://www.facebook.com/sepp.hock" target="_blank" rel="noopener">Facebook</a>
+      <a class="btn line" href="https://www.instagram.com/sepp_hock" target="_blank" rel="noopener">Instagram</a>
     </div>
-    <div class="door">
-      <h3>Talk with Sepp</h3>
-      <p>A free, no-pressure chat about the science, the products or the business.</p>
-      <div class="contact">
-        <code id="email">sepphock@pm.me</code>
-        <button class="copy" type="button" id="copyEmail">Copy</button>
-      </div>
-      <a class="btn line go" href="mailto:sepphock@pm.me?subject=Hi%20Sepp">Email me</a>
-    </div>
-    <div class="door">
-      <h3>Meet the whole Sepp</h3>
-      <p>My story, my practices and what I'm building next.</p>
-      <span class="btn line go" style="opacity:.6;cursor:default">sepphock.com · Coming soon</span>
-    </div>
+  </div>
+
+  <div class="signature flow">
+    <h3>Stay curious.</h3>
+    <p><strong>Sepp Hock</strong><br>Salt Water Man 🌊 • Aging Strong 💙<br>Connection. Contribution. Service.</p>
   </div>
 </div></section>
 </main>
 
 <footer><div class="wrap">
-  <p>This page shares general education and personal experience only. It is not medical advice. ASEA products are not intended to diagnose, treat, cure or prevent any disease. Always talk with your doctor about your health. Individual experiences vary.</p>
-  <div class="row">
-    <p>© 2026 Sepp Hock · Independent ASEA Brand Partner · Cairns, Far North Queensland</p>
-    <p>ASEA is a trademark of ASEA LLC.</p>
+  <div class="ident">
+    <strong>Sepp Hock</strong>
+    <p>Salt Water Man 🌊 • Aging Strong 💙<br>Connection. Contribution. Service.</p>
   </div>
+  <nav class="foot-links" aria-label="More information">
+    <a href="research.html">Research &amp; Science</a><a href="privacy.html">Privacy</a><a href="disclaimer.html">Disclaimer</a><a href="#connect">Contact</a>
+  </nav>
+  <p>Personal experiences shared on this website are for informational purposes only. They are not medical advice, do not establish causation and do not predict individual outcomes.</p>
+  <p>ASEA is a trademark of ASEA LLC. © 2026 Sepp Hock. All rights reserved.</p>
 </div></footer>
 
 <script>
