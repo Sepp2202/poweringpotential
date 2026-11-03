@@ -151,3 +151,4 @@ footer a{color:#9FDDF2}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 .refs{margin:0;padding-left:1.2rem;display:flex;flex-direction:column;gap:.6rem}
 .refs:empty{display:none}
+.note{font-size:1rem;padding:16px 18px;border-radius:12px;background:var(--mist);border:1px solid var(--line)}
